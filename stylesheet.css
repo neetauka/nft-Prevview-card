@@ -1,0 +1,191 @@
+:root{
+    /*primary*/
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    /* neutral */
+    --Very-dark-blue-mainBG : hsl(217, 54%, 11%); /* (main BG) */
+    --Very-dark-blue-cardBG: hsl(216, 50%, 16%);  /*(card BG)*/
+    --Very-dark-blue-line : hsl(215, 32%, 27%); /*(line)*/
+    --White: hsl(0, 0%, 100%);
+   }
+
+
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin:0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+button {
+  margin: 0;
+}
+
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+ list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+ scroll-behavior: smooth;
+}
+
+@font-face {
+   font-family:'Outfit Light';
+   src: url('font/Outfit-Light.ttf');
+}
+@font-face {
+   font-family:'Outfit Regular';
+   src: url('font/Outfit-Regular.ttf');
+}
+@font-face {
+    font-family:'Outfit SemiBold';
+    src: url('font/Outfit-SemiBold.ttf');
+ }
+.attribution { 
+   font-size: 11px; 
+   text-align: center;
+   color:white;
+}
+.attribution a { 
+   color: hsl(228, 45%, 44%);
+}
+
+body{
+   background-color: var(--Very-dark-blue-mainBG);
+}
+
+.container{
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   width:100%;
+   min-height: 100vh;
+}
+.card{
+   max-width: 320px;
+   width:100%;
+   box-sizing: border-box;
+   padding:20px;
+   border-radius: 15px;
+   background-color: var( --Very-dark-blue-cardBG);
+}
+.image{
+   position:relative;
+   width: 100%;
+   cursor:pointer;
+   border-radius: 10px;
+}
+.image::before{
+   content:"";
+   position: absolute;
+   inset:0;
+   background-color: var(--Cyan);
+   opacity: 0;
+   transition: 0.5s opacity;
+   height:280px;
+   border-radius: 10px;
+}
+.image:hover::before{
+   opacity: 0.5;
+}
+
+.image .equilibrum-image{
+   width:100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 10px;
+   margin-bottom: 15px;
+}
+.image .view{
+   z-index: 2;
+   position: absolute;
+   top: 50%;
+   left:50%;
+   transform: translate(-50%,-50%);
+   opacity: 0;
+   transition: 0.5s 0.2s opacity;
+}
+.image:hover .view{
+   opacity:1;
+}
+
+.middle{
+   border-bottom: 1px solid var(--Very-dark-blue-line );
+}
+.middle h1{
+/* font-size: 20px; */
+color:var(--White);
+font-family:'Outfit Regular';
+margin-bottom: 20px;
+}
+.middle h1:hover{
+   color:var(--Cyan);
+   cursor: pointer;
+}
+#para{
+   color:var(--Soft-blue);
+   font-family:'Outfit Light';
+   font-size: 18px;
+   margin-bottom: 15px;
+}
+.value{
+   display:flex;
+   justify-content: space-between;
+   margin-bottom: 25px;
+}
+.price span{
+   position: relative;
+   top: -2px;
+   padding-left:6px;
+   color:var(--Cyan);
+   font-size: 16px;
+   font-family: 'Outfit SemiBold';
+}
+.time span{
+   position: relative;
+   top: -2px;
+   padding-left:6px;
+   font-size: 16px;
+   font-family:'Outfit Light';
+   color:var(--Soft-blue);
+}
+footer{
+display: flex;
+margin-top: 10px;
+align-items: center;
+}
+footer img{
+border-radius: 50%;
+border:1px solid var(--White);
+width:30px;
+}
+footer p{
+   padding-left:15px;
+   color:var(--Soft-blue);
+   font-size: 16px;
+   font-family:'Outfit Light';
+}
+footer span{
+   font-family:'Outfit Regular';
+   color:var(--White); 
+}
+footer span:hover{
+   color:var(--Cyan);
+   cursor: pointer;
+}
